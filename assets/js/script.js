@@ -4,14 +4,15 @@
 
 
 var testApi = function () {
-    var pokemonID = 1;
+    var pokemonID = 500;
     var url = 'http://pokeapi.co/api/v2/pokemon/' + pokemonID;
     $.getJSON(url, function (data) {
         console.log(data);
+
 
     })
 };
 
 $(document).ready(function () {
-
+    testApi();
 });
