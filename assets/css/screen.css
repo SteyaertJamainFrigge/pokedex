@@ -4,11 +4,21 @@ body {  font-family: Helvetica, Arial,sans-serif;
 }
 h1 {
     display: block;
-    background: #3B5998;
-    color: white;
+    color: yellow;
     font-size: 1.3rem;
     font-weight: bold;
     line-height: 42px;
     text-indent: 40px;
     margin-bottom: 10px;
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+form {   display: block;
+    width: 440px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+    color: yellow;
 }
