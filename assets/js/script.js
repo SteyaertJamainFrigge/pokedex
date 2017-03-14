@@ -4,13 +4,13 @@
 
 
 var geefPokemonWeer = function (naam, hoogte, afbeeldingLink) {
-
+    htmlString = '<figure><img title="' + naam + '" src="' + afbeeldingLink + '" />' + '<figcaption>' + naam +
+        '</figcaption></figure>';
+    $('#result').html(htmlString);
 };
 
-var haalPokemonOp = function (e) {
-    e.preventDefault();
-    var pokemonID = $(this).attr('id');
-    var url = 'http://pokeapi.co/api/v2/pokemon/' + pokemonID;
+var haalPokemonOp = function (idOfNaam) {
+    var url = 'http://pokeapi.co/api/v2/pokemon/' + idOfNaam;
     $.getJSON(url, function (data) {
         console.log(data);
         var naam = data.name;
@@ -20,6 +20,14 @@ var haalPokemonOp = function (e) {
     })
 };
 
+var pokeListHandler = function (e) {
+    e.preventDefault();
+    haalPokemonOp($(this).attr('id'));
+
+};
+
 $(document).ready(function () {
-    testApi();
+    //$('#submit').on('click', haalPokemonOp());
+    $('.pokeList').on('click', pokeListHandler);
+    // haalPokemonOp(302);
 });
