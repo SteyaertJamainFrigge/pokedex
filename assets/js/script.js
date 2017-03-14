@@ -13,5 +13,5 @@ var testApi = function () {
 };
 
 $(document).ready(function () {
-
+    $('#submit').on('click', verwerkZoekopdracht);
 });
